@@ -4,26 +4,22 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.function.BiFunction;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public class FileFXRefDataSource implements DataSource<Collection<FXEntry>> {
+public class FileDataSource<T> implements DataSource<T> {
 
     private final Iterator<String> lineIterator;
     private final String[] headers;
     private final BufferedReader fileBuffered;
+    private final BiFunction<String, String[], T> mapper;
 
-    public static DataSource<Collection<FXEntry>> fromRefDataFile(File refDataFile) {
-        return new FileFXRefDataSource(refDataFile);
-    }
-
-    public FileFXRefDataSource(File fileToSeedFrom) {
+    public FileDataSource(File fileToSeedFrom, BiFunction<String, String[], T> mapper) {
         Objects.requireNonNull(fileToSeedFrom, "Can not generate data source with a null file");
+        this.mapper = mapper;
         if (!fileToSeedFrom.exists() || !fileToSeedFrom.canRead()) {
             throw new IllegalArgumentException("The file specified is either does not exist or unreadable!!");
         }
@@ -37,12 +33,12 @@ public class FileFXRefDataSource implements DataSource<Collection<FXEntry>> {
     }
 
     @Override
-    public Iterator<Collection<FXEntry>> iterator() {
+    public Iterator<T> iterator() {
         return new FXEntryIterator();
     }
 
     @Override
-    public Stream<Collection<FXEntry>> getData() {
+    public Stream<T> getData() {
         return StreamSupport.stream(spliterator(), false);
     }
 
@@ -51,7 +47,7 @@ public class FileFXRefDataSource implements DataSource<Collection<FXEntry>> {
         fileBuffered.close();
     }
 
-    class FXEntryIterator implements Iterator<Collection<FXEntry>> {
+    class FXEntryIterator implements Iterator<T> {
 
         @Override
         public boolean hasNext() {
@@ -59,10 +55,8 @@ public class FileFXRefDataSource implements DataSource<Collection<FXEntry>> {
         }
 
         @Override
-        public Collection<FXEntry> next() {
-            String[] elements = lineIterator.next().split(",", -1);
-            String fromCurrency = elements[0];
-            return IntStream.range(1, elements.length).mapToObj((index) -> new FXEntry(fromCurrency, headers[index], elements[index])).collect(Collectors.toList());
+        public T next() {
+            return mapper.apply(lineIterator.next(), headers);
         }
     }
 }

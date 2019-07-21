@@ -1,8 +1,11 @@
 package com.example.fx;
 
-import java.util.Set;
+import java.util.*;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Utils {
     protected static final Pattern DOUBLE_PATTERN = Pattern.compile(
@@ -32,4 +35,25 @@ public class Utils {
         return input -> factor * input;
     }
 
+    public static BiFunction<String, String[], Collection<FXEntry>> lineToFXEntriesMapping(){
+        return (line, headers) -> {
+            if(isEmptystring(line)) {
+                return Collections.emptyList();
+            }
+            String[] elements = line.split(",", -1);
+            String fromCurrency = elements[0];
+            return IntStream.range(1, elements.length).mapToObj((index) -> new FXEntry(fromCurrency, headers[index], elements[index])).collect(Collectors.toList());
+        };
+    }
+
+    public static BiFunction<String, String[], Map<String, String>> lineToMapMapping(){
+        return (line, headers) -> {
+            if(isEmptystring(line)) {
+                return Collections.emptyMap();
+            }
+            String[] elements = line.split(",", -1);
+            return IntStream.range(0, elements.length).<Map.Entry<String, String>>mapToObj((index) -> new HashMap.SimpleEntry<>(headers[index], elements[index]))
+                    .collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue()));
+        };
+    }
 }

@@ -2,29 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0219e97-0972-4dfc-b51a-271c2a8e3177" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/DataSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/DataSync.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/fx/ConvertDataFileByFXrate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/ExchangeRateProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/FXRefDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/FXRefDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/FileFXRefDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/FileFXRefDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilderV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilderV2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/FXRefDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/FileFXRefDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/FileDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/Converter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConverterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConverterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/FXEventHandlerDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/FXEventHandlerDelegate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fx/ConversionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fx/ConversionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fx/ConvertDataFileByFXrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fx/ConvertDataFileByFXrate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fx/FileFXRefDataSourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fx/FileDataSourceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/fx/LookupTableBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/fx/LookupTableBuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/LookupTableBuilderV2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/fx/LookupTableBuilderV2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConversionServiceByLookup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConversionServiceByLookup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/Converter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/Converter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConverterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConverterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEventHandlerDelegate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEventHandlerDelegate$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEventHandlerDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEventHandlerDelegate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/fx/ConversionServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/fx/ConversionServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/currencyconverter.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/DataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/DataSync.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/Either.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/FXEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/FXRefDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/FileDatSync.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/FileFXRefDataSource$FXEntryIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/FileFXRefDataSource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/LookupTableBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/LookupTableBuilderV2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConversionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConversionServiceByLookup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/Converter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConverterImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/ConverterResolutionException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEvent$EventType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEventHandlerDelegate$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEventHandlerDelegate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/FXEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/IllegalOperationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/fx/conversion/NoConverterFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/fx/ConversionServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/fx/ConvertDataFileByFXrate$DataFileWithHeaderIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/fx/ConvertDataFileByFXrate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/fx/FileFXRefDataSourceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/fx/LookupTableBuilderTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,8 +76,45 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/ConvertDataFileByFXrate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="25" column="111" selection-start-line="25" selection-start-column="111" selection-end-line="25" selection-end-column="111" />
+            <state relative-caret-position="175">
+              <caret line="25" column="114" selection-start-line="25" selection-start-column="114" selection-end-line="25" selection-end-column="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1190#1211#0" expanded="true" />
+                <element signature="e#3225#3226#0" expanded="true" />
+                <element signature="e#3266#3267#0" expanded="true" />
+                <element signature="e#4121#4122#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileDataSource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilderV2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="114" selection-start-line="23" selection-start-column="114" selection-end-line="23" selection-end-column="114" />
+              <caret line="23" column="124" selection-start-line="23" selection-start-column="124" selection-end-line="23" selection-end-column="124" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,80 +135,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/ConversionServiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+            <state relative-caret-position="72">
+              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#645#646#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
+                <element signature="e#2717#2744#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileFXRefDataSource.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1411#1412#0" expanded="true" />
-                <element signature="e#1455#1456#0" expanded="true" />
-                <element signature="e#1521#1522#0" expanded="true" />
-                <element signature="e#1586#1587#0" expanded="true" />
-                <element signature="e#1875#1876#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/LookupTableBuilderTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FXRefDataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/DataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/DataSync.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="201">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -159,13 +159,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="315">
+              <caret line="21" column="101" selection-start-line="21" selection-start-column="101" selection-end-line="21" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#422#423#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/output.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -184,9 +191,12 @@
     <findStrings>
       <find>private</find>
       <find>Utils</find>
+      <find>Collection&lt;FXEntry&gt;</find>
+      <find>Collectors.toMap</find>
     </findStrings>
     <replaceStrings>
       <replace>protected</replace>
+      <replace>T</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -206,8 +216,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/ConverterResolutionException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/ConverterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/StaticFXRefDataSource.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/example/fx/FileFXRefDataSourceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/FXEntry.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/Pair.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/ConversionServiceByLookup.java" />
@@ -215,7 +223,6 @@
         <option value="$PROJECT_DIR$/src/test/resources/ref_badcurr.csv" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/FXEventHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/FXEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/FXEventListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilder.java" />
         <option value="$PROJECT_DIR$/src/test/resources/ref_badcurr_good.csv" />
@@ -223,17 +230,22 @@
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/Converter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/FXEventHandlerDelegate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConverterImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/CSVRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/DataSync.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/FXRefDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/DataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/FileFXRefDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilderV2.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/fx/ConversionServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/example/fx/ConvertDataFileByFXrate.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/fx/FileFXRefDataSourceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/fx/LookupTableBuilderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/FileFXRefDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/FileDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/fx/ConvertDataFileByFXrate.java" />
       </list>
     </option>
   </component>
@@ -243,6 +255,27 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="currency-converter" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="currency-converter" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="currency-converter" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="133" />
@@ -256,8 +289,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -295,6 +326,15 @@
               <item name="currencyconverter" type="b2602c69:ProjectViewProjectNode" />
               <item name="currencyconverter" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fx" type="462c0819:PsiDirectoryNode" />
+              <item name="conversion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="currencyconverter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="currencyconverter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -323,13 +363,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -348,6 +390,7 @@
       <recent name="com.example.fx" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
@@ -364,7 +407,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LookupTableBuilderTest">
+  <component name="RunManager" selected="Application.ConvertDataFileByFXrate">
+    <configuration name="ConvertDataFileByFXrate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.fx.ConvertDataFileByFXrate" />
+      <module name="currencyconverter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fx.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConversionServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencyconverter" />
       <extension name="coverage">
@@ -380,7 +436,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileFXRefDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileDataSourceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="currencyconverter" />
       <extension name="coverage">
         <pattern>
@@ -389,7 +445,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.fx" />
-      <option name="MAIN_CLASS_NAME" value="com.example.fx.FileFXRefDataSourceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.fx.FileDataSourceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -412,9 +468,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LookupTableBuilderTest" />
+        <item itemvalue="Application.ConvertDataFileByFXrate" />
+        <item itemvalue="JUnit.FileDataSourceTest" />
         <item itemvalue="JUnit.ConversionServiceTest" />
-        <item itemvalue="JUnit.FileFXRefDataSourceTest" />
+        <item itemvalue="JUnit.LookupTableBuilderTest" />
       </list>
     </recent_temporary>
   </component>
@@ -435,20 +492,12 @@
       <option name="presentableId" value="Default" />
       <updated>1563534808417</updated>
       <workItem from="1563534812765" duration="26594000" />
-      <workItem from="1563615738444" duration="32918000" />
+      <workItem from="1563615738444" duration="34504000" />
+      <workItem from="1563710066282" duration="4963000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConversionServiceTest - 2019.07.21 at 17h 39m 29s.xml">
-      <configuration name="ConversionServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConversionServiceTest - 2019.07.21 at 17h 40m 55s.xml">
-      <configuration name="ConversionServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConversionServiceTest - 2019.07.21 at 18h 11m 35s.xml">
-      <configuration name="ConversionServiceTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ConversionServiceTest - 2019.07.21 at 18h 12m 33s.xml">
       <configuration name="ConversionServiceTest" configurationId="JUnit" />
     </history-entry>
@@ -470,26 +519,34 @@
     <history-entry file="LookupTableBuilderTest - 2019.07.21 at 20h 41m 12s.xml">
       <configuration name="LookupTableBuilderTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LookupTableBuilderTest - 2019.07.21 at 21h 06m 30s.xml">
+      <configuration name="LookupTableBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConversionServiceTest - 2019.07.21 at 21h 06m 38s.xml">
+      <configuration name="ConversionServiceTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileFXRefDataSourceTest - 2019.07.21 at 21h 06m 48s.xml">
+      <configuration name="FileFXRefDataSourceTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59512000" />
+    <option name="totallyTimeSpent" value="66061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22528581" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22864829" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32871014" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.6629681" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.37170595" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.6255201" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4479889" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -498,44 +555,45 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32871014" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.32952252" />
-      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.32952252" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22528581" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22864829" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32918397" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.6629681" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.37170595" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.6255201" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32871014" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6629681" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37170595" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4479889" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32871014" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32871014" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.32952252" />
-      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.32952252" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout-to-restore>
@@ -547,7 +605,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/example/fx/FileFXRefDataSourceTest.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/fx/FileDataSourceTest.java</url>
           <line>13</line>
           <properties />
           <option name="timeStamp" value="1" />
@@ -557,19 +615,6 @@
           <line>16</line>
           <properties />
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="currentEntry.getFromCurrency().equals(&quot;CHF&quot;) &amp;&amp; currentEntry.getToCurrency().equals(&quot;JPY&quot;)" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilder.java</url>
-          <line>69</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java</url>
-          <line>24</line>
-          <properties />
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/example/fx/ConversionServiceTest.java</url>
@@ -653,13 +698,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/ExchangeRateProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/ExchangeRateProvider.java" />
     <entry file="jar://$USER_HOME$/Apps/jdk-11.0.2/lib/src.zip!/java.base/java/util/stream/Collectors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -713,23 +752,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/StaticFXRefDataSource.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/FileFXRefDataSourceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="106" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Apps/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -825,13 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/ref_badcurr_good_shrink.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -842,23 +857,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/CustomFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/CustomFunction.java" />
     <entry file="jar://$USER_HOME$/Apps/jdk-11.0.2/lib/src.zip!/java.base/java/util/function/BiFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -897,16 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="42" column="104" lean-forward="true" selection-start-line="42" selection-start-column="104" selection-end-line="42" selection-end-column="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConverterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="835">
@@ -932,23 +921,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/CSVRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/CSVRecord.java" />
     <entry file="jar://$USER_HOME$/Apps/jdk-11.0.2/lib/src.zip!/java.base/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -966,57 +939,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/LookupTableBuilderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FXRefDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="72" />
+        <state relative-caret-position="210">
+          <caret line="14" column="176" selection-start-line="14" selection-start-column="176" selection-end-line="14" selection-end-column="176" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/DataSource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FXRefDataSource.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilder.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileDataSource.java___jb_tmp___" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/FileDataSourceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileFXRefDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1411#1412#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="e#1586#1587#0" expanded="true" />
-            <element signature="e#1875#1876#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilderV2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="114" selection-start-line="23" selection-start-column="114" selection-end-line="23" selection-end-column="114" />
+        <state relative-caret-position="120">
+          <caret line="13" column="119" selection-start-line="13" selection-start-column="119" selection-end-line="13" selection-end-column="119" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1025,32 +964,116 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/ConversionServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        <state relative-caret-position="150">
+          <caret line="15" column="141" selection-start-line="15" selection-start-column="141" selection-end-line="15" selection-end-column="141" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#645#646#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/LookupTableBuilderTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/DataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+        <state relative-caret-position="90">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/LookupTableBuilderV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="124" selection-start-line="23" selection-start-column="124" selection-end-line="23" selection-end-column="124" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2717#2744#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/FileDatSync.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="101" selection-start-line="21" selection-start-column="101" selection-end-line="21" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/fx/conversion/ConversionServiceByLookup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="53" column="46" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output_old.csv">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/fx/ConvertDataFileByFXrate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="25" column="111" selection-start-line="25" selection-start-column="111" selection-end-line="25" selection-end-column="111" />
+        <state relative-caret-position="175">
+          <caret line="25" column="114" selection-start-line="25" selection-start-column="114" selection-end-line="25" selection-end-column="114" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1190#1211#0" expanded="true" />
+            <element signature="e#3225#3226#0" expanded="true" />
+            <element signature="e#3266#3267#0" expanded="true" />
+            <element signature="e#4121#4122#0" expanded="true" />
           </folding>
         </state>
       </provider>

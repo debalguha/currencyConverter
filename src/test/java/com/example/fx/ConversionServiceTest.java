@@ -13,7 +13,7 @@ public class ConversionServiceTest {
     @Before
     public void setup() throws Exception{
         String filePath = Thread.currentThread().getContextClassLoader().getResource("ref_badcurr_good.csv").getFile();
-        service = new ConversionServiceByLookup(LookupTableBuilderV2.withRefDataSource(new FileFXRefDataSource(new File(filePath))).buildFXConversionTable());
+        service = new ConversionServiceByLookup(LookupTableBuilderV2.withRefDataSource(new FileDataSource(new File(filePath), Utils.lineToFXEntriesMapping())).buildFXConversionTable());
     }
     @Test(expected = RuntimeException.class)
     public void test_BadCurrToBadCurr4Conversion() {

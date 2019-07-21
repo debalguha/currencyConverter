@@ -8,16 +8,26 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
+import static com.example.fx.Utils.*;
 
 public class ConversionServiceByLookup implements ConversionService, FXEventListener {
     private final ConcurrentMap<Pair<String, String>, Converter> converterLookupTable;
     private final FXEventHandlerDelegate eventDelegate;
+    private boolean supressExceptionToMessage;
     //private final
 
     public ConversionServiceByLookup(Map<Pair<String, String>, Converter> converterLookupTable) {
         this.converterLookupTable = new ConcurrentHashMap<>();
         this.converterLookupTable.putAll(converterLookupTable);
         this.eventDelegate = new FXEventHandlerDelegate();
+        this.supressExceptionToMessage = true;
+    }
+
+    public ConversionServiceByLookup(Map<Pair<String, String>, Converter> converterLookupTable, boolean supressExceptionToMessage) {
+        this.converterLookupTable = new ConcurrentHashMap<>();
+        this.converterLookupTable.putAll(converterLookupTable);
+        this.eventDelegate = new FXEventHandlerDelegate();
+        this.supressExceptionToMessage = supressExceptionToMessage;
     }
 
     @Override
@@ -27,6 +37,22 @@ public class ConversionServiceByLookup implements ConversionService, FXEventList
             return createFunctionComposition(converterLookupTable.get(currencyPair), converterLookupTable).apply(valueToConvert);
         } else {
             throw new NoConverterFoundException("Unable to find any converter for given Pair", currencyPair);
+        }
+    }
+
+    @Override
+    public String doConversion(String fromCurrency, String toCurrency, String valueToConvert) {
+        if(!canTransformTODouble(valueToConvert)) {
+            return String.format("Unable to parse data[%s] for conversion", valueToConvert);
+        }
+        try{
+            return String.valueOf(doConversion(fromCurrency, toCurrency, Double.valueOf(valueToConvert)));
+        } catch(Exception e){
+            if(supressExceptionToMessage) {
+                return e.getMessage();
+            } else {
+                throw new RuntimeException(e);
+            }
         }
     }
 
