@@ -1,0 +1,91 @@
+package com.example.fx;
+
+import com.example.fx.conversion.Converter;
+import com.example.fx.conversion.ConverterImpl;
+
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static com.example.fx.Utils.*;
+
+public class LookupTableBuilderV2 {
+    protected FXRefDataSource refDataSource;
+    public static LookupTableBuilderV2 withRefDataSource(FXRefDataSource refDataSource) {
+        LookupTableBuilderV2 lookupTableBuilder = new LookupTableBuilderV2();
+        lookupTableBuilder.refDataSource = refDataSource;
+        return lookupTableBuilder;
+    }
+
+    public Map<Pair<String, String>, Converter> buildFXConversionTable() {
+        Map<Pair<String, String>, Converter> conversionTable = new HashMap<>();
+        Map<Pair<String, String>, FXEntry> pairFXEntryMap = refDataSource.getFxValueEntries().collect(Collectors.toMap(fxEntry -> Pair.fromFXEntry(fxEntry), Function.identity()));
+        for(Pair<String, String> currentPair : pairFXEntryMap.keySet()) {
+            FXEntry currentEntry = pairFXEntryMap.get(currentPair);
+            conversionTable.putIfAbsent(currentPair, processEntry(currentEntry, currentPair, pairFXEntryMap, conversionTable, new HashSet<>()));
+        }
+        return conversionTable;
+    }
+
+    private Converter processEntry(FXEntry currentEntry, Pair<String, String> currentPair, Map<Pair<String, String>, FXEntry> pairFXEntryMap, Map<Pair<String, String>, Converter> conversionTable, Set<Pair<String, String>> visitedEntries) {
+        System.out.println("Processing:: "+currentEntry + " and current pair:: "+currentPair);
+        visitedEntries.add(currentPair);
+        if(currentEntry == null){
+            return new ConverterImpl(currentPair);
+        }
+        if(isEmptystring(currentEntry.getConversionEntry())){
+            return new ConverterImpl(currentEntry);
+        }
+        if(canTransformTODouble(currentEntry.getConversionEntry())){
+            return new ConverterImpl(currentPair, buildFunction(Double.parseDouble(currentEntry.getConversionEntry())));
+        } else {
+            if(currentPair._1().equals(currentPair._2())){
+                return new ConverterImpl(currentEntry);
+            }
+            Function<Double, Double> compositeFunction;
+            final Pair<String, String>[] referencedPair = toRefPairs(currentEntry);
+            if(existCyclicReference(referencedPair[0], referencedPair[1], visitedEntries)){
+                System.out.println(logForCyclicReference(referencedPair[0], referencedPair[1], visitedEntries));
+                return new ConverterImpl(currentEntry);
+            }
+            Optional<Converter> firstRefConverter = lookupConverterFromConversionTable(referencedPair[0], conversionTable);
+            if(!firstRefConverter.isPresent()){
+                firstRefConverter = Optional.of(processEntry(pairFXEntryMap.get(referencedPair[0]), referencedPair[0], pairFXEntryMap, conversionTable, visitedEntries));
+                conversionTable.put(referencedPair[0], firstRefConverter.get());
+            }
+
+            Optional<Converter> secondRefConverter = lookupConverterFromConversionTable(referencedPair[1], conversionTable);
+            if(!secondRefConverter.isPresent()){
+                secondRefConverter = Optional.of(processEntry(pairFXEntryMap.get(referencedPair[1]), referencedPair[1], pairFXEntryMap, conversionTable, visitedEntries));
+                conversionTable.put(referencedPair[1], secondRefConverter.get());
+            }
+
+            if(firstRefConverter.isPresent() && firstRefConverter.get().getConverterFunction().isPresent()){
+                compositeFunction = firstRefConverter.get().getConverterFunction().get();
+            } else {
+                return new ConverterImpl(currentEntry);
+            }
+
+
+            if(secondRefConverter.isPresent() && secondRefConverter.get().getConverterFunction().isPresent()){
+                compositeFunction = compositeFunction.compose(secondRefConverter.get().getConverterFunction().get());
+            } else {
+                return new ConverterImpl(currentEntry);
+            }
+
+            return new ConverterImpl(currentPair, compositeFunction);
+        }
+    }
+
+    private String logForCyclicReference(Pair<String, String> referencePair1, Pair<String, String> referencePair2, Set<Pair<String, String>> visitedEntries) {
+        StringBuilder builder = new StringBuilder("Detected cyclic reference ");
+        builder.append(String.format("First Pair [%s]", referencePair1)).append(String.format("Second Pair [%s]", referencePair2));
+        builder.append(String.format("\n\t Visited Entries [%s]", visitedEntries));
+        return builder.toString();
+    }
+
+    private Optional<Converter> lookupConverterFromConversionTable(Pair<String, String> pair, Map<Pair<String, String>, Converter> conversionTable) {
+        return Optional.ofNullable(conversionTable.get(pair));
+    }
+
+}

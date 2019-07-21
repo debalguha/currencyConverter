@@ -1,0 +1,6 @@
+Currency,USD,EUR,SGD,JPY,INR,RMB,CHF,AUD,BadCurr,BadCurr1,BadCurr2,BadCurr3,BadCurr4
+BadCurr,1.15,,,,,,,,1,2,BadCurr1,BadCurr1,BadCurr1
+BadCurr1,,,,,,,,,,1,2,BadCurr2,BadCurr2
+BadCurr2,,,,,,,,,,,1,2,BadCurr3
+BadCurr3,,,,,,,,,,,,1,BadCurr1
+BadCurr4,,,,,,,,,,,,,1

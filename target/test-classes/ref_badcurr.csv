@@ -1,0 +1,14 @@
+Currency,USD,EUR,SGD,JPY,INR,RMB,CHF,AUD,BadCurr1,BadCurr2,BadCurr3,BadCurr4
+USD,1,0.89,1.35,110,69.17,6.72,EUR,,,,,
+EUR,1.13,1,USD,124,USD,USD,1.12,,,,,
+SGD,0.74,USD,1,,JPY,JPY,EUR,,,,,
+JPY,0.01,USD,USD,1,USD,USD,EUR,,,,,
+INR,0.01,0.01,0.02,1.59,1,USD,EUR,,,,,
+RMB,0.15,USD,USD,USD,USD,1,EUR,,,,,
+CHF,1.01,USD,USD,JPY,JPY,JPY,1,,,,,
+AUD,0.704056,0.627437,USD,75.83,USD,USD,EUR,1,USD,,,BadCurr
+BadCurr,1.15,,,,,,,,,,,BadCurr1
+BadCurr1,,,,,,,,,,,,BadCurr2
+BadCurr2,,,,,,,,,,,,BadCurr3
+BadCurr3,,,,,,,,,,,,BadCurr1
+BadCurr4,,,,,,,,,,,,1
