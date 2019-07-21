@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class LookupTableBuilderTest {
     @Test
-    public void test_buildFXConversionTable() {
+    public void test_buildFXConversionTable() throws Exception{
         String filePath = Thread.currentThread().getContextClassLoader().getResource("ref_badcurr.csv").getFile();
         Map<Pair<String, String>, Converter> pairConverterMap = LookupTableBuilderV2.withRefDataSource(new FileFXRefDataSource(new File(filePath))).buildFXConversionTable();
         Assert.assertNotNull(pairConverterMap);

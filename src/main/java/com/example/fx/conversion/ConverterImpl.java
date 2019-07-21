@@ -3,7 +3,9 @@ package com.example.fx.conversion;
 import com.example.fx.FXEntry;
 import com.example.fx.Pair;
 
+import java.util.LinkedList;
 import java.util.Optional;
+import java.util.Queue;
 import java.util.function.Function;
 
 public class ConverterImpl implements Converter {
@@ -11,13 +13,23 @@ public class ConverterImpl implements Converter {
     private final Optional<String> unresolvedFactorOrValue;
     private final Optional<Function<Double, Double>> converterFunction;
 
+    private final Queue<Pair<String, String>> referencedPairs = new LinkedList<>();
+
     public ConverterImpl(Pair<String, String> fxPair, Function<Double, Double> converterFunction) {
         this.fxPair = fxPair;
         this.converterFunction = Optional.of(converterFunction);
         this.unresolvedFactorOrValue = Optional.empty();
     }
 
-    public ConverterImpl(FXEntry fxEntry){
+    public ConverterImpl(Pair<String, String> fxPair, Pair<String, String> firstReference, Pair<String, String> secondReferene) {
+        this.fxPair = fxPair;
+        referencedPairs.offer(firstReference);
+        referencedPairs.offer(secondReferene);
+        this.converterFunction = Optional.of(Function.identity());
+        this.unresolvedFactorOrValue = Optional.empty();
+    }
+
+    public ConverterImpl(FXEntry fxEntry) {
         this.fxPair = Pair.fromFXEntry(fxEntry);
         this.converterFunction = Optional.empty();
         this.unresolvedFactorOrValue = Optional.of(fxEntry.getConversionEntry());
@@ -40,17 +52,12 @@ public class ConverterImpl implements Converter {
     }
 
     @Override
-    public Double convert(Double from) {
-        if(converterFunction.isPresent()) {
-            return converterFunction.get().apply(from);
-        }
-        StringBuilder builder = new StringBuilder("Unable to built a converter function from reference data as [");
-        builder.append("From Currency: ").append(fxPair._1()).append(", To Currency: ").append(fxPair._2()).append(", with Factor: ").append(unresolvedFactorOrValue.get());
-        throw new ConverterResolutionException(new FXEntry(fxPair._1(), fxPair._2(), unresolvedFactorOrValue.get()), builder.toString());
+    public Optional<String> getUnresolvedFactorOrValue() {
+        return unresolvedFactorOrValue;
     }
 
     @Override
-    public Optional<String> getUnresolvedFactorOrValue() {
-        return unresolvedFactorOrValue;
+    public Queue<Pair<String, String>> getReferencedPairs() {
+        return referencedPairs;
     }
 }

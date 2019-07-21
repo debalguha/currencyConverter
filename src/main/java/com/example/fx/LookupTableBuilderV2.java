@@ -3,6 +3,7 @@ package com.example.fx;
 import com.example.fx.conversion.Converter;
 import com.example.fx.conversion.ConverterImpl;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -10,19 +11,23 @@ import java.util.stream.Collectors;
 import static com.example.fx.Utils.*;
 
 public class LookupTableBuilderV2 {
-    protected FXRefDataSource refDataSource;
-    public static LookupTableBuilderV2 withRefDataSource(FXRefDataSource refDataSource) {
+    protected DataSource<Collection<FXEntry>> refDataSource;
+    public static LookupTableBuilderV2 withRefDataSource(DataSource<Collection<FXEntry>> refDataSource) {
         LookupTableBuilderV2 lookupTableBuilder = new LookupTableBuilderV2();
         lookupTableBuilder.refDataSource = refDataSource;
         return lookupTableBuilder;
     }
 
-    public Map<Pair<String, String>, Converter> buildFXConversionTable() {
+    public Map<Pair<String, String>, Converter> buildFXConversionTable() throws IOException {
         Map<Pair<String, String>, Converter> conversionTable = new HashMap<>();
-        Map<Pair<String, String>, FXEntry> pairFXEntryMap = refDataSource.getFxValueEntries().collect(Collectors.toMap(fxEntry -> Pair.fromFXEntry(fxEntry), Function.identity()));
-        for(Pair<String, String> currentPair : pairFXEntryMap.keySet()) {
-            FXEntry currentEntry = pairFXEntryMap.get(currentPair);
-            conversionTable.putIfAbsent(currentPair, processEntry(currentEntry, currentPair, pairFXEntryMap, conversionTable, new HashSet<>()));
+        try {
+            Map<Pair<String, String>, FXEntry> pairFXEntryMap = refDataSource.getData().flatMap(Collection::stream).collect(Collectors.toMap(fxEntry -> Pair.fromFXEntry(fxEntry), Function.identity()));
+            for(Pair<String, String> currentPair : pairFXEntryMap.keySet()) {
+                FXEntry currentEntry = pairFXEntryMap.get(currentPair);
+                conversionTable.putIfAbsent(currentPair, processEntry(currentEntry, currentPair, pairFXEntryMap, conversionTable, new HashSet<>()));
+            }
+        } finally {
+            refDataSource.close();
         }
         return conversionTable;
     }
@@ -42,7 +47,6 @@ public class LookupTableBuilderV2 {
             if(currentPair._1().equals(currentPair._2())){
                 return new ConverterImpl(currentEntry);
             }
-            Function<Double, Double> compositeFunction;
             final Pair<String, String>[] referencedPair = toRefPairs(currentEntry);
             if(existCyclicReference(referencedPair[0], referencedPair[1], visitedEntries)){
                 System.out.println(logForCyclicReference(referencedPair[0], referencedPair[1], visitedEntries));
@@ -60,20 +64,11 @@ public class LookupTableBuilderV2 {
                 conversionTable.put(referencedPair[1], secondRefConverter.get());
             }
 
-            if(firstRefConverter.isPresent() && firstRefConverter.get().getConverterFunction().isPresent()){
-                compositeFunction = firstRefConverter.get().getConverterFunction().get();
-            } else {
-                return new ConverterImpl(currentEntry);
+            if(firstRefConverter.isPresent() && firstRefConverter.get().getConverterFunction().isPresent()
+                && secondRefConverter.isPresent() && secondRefConverter.get().getConverterFunction().isPresent()){
+                return new ConverterImpl(currentPair, firstRefConverter.get().getPair(), secondRefConverter.get().getPair());
             }
-
-
-            if(secondRefConverter.isPresent() && secondRefConverter.get().getConverterFunction().isPresent()){
-                compositeFunction = compositeFunction.compose(secondRefConverter.get().getConverterFunction().get());
-            } else {
-                return new ConverterImpl(currentEntry);
-            }
-
-            return new ConverterImpl(currentPair, compositeFunction);
+            return new ConverterImpl(currentEntry);
         }
     }
 

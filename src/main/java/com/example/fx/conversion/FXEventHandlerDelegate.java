@@ -6,7 +6,6 @@ import com.example.fx.Pair;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Function;
 
 import static com.example.fx.Utils.*;
 
@@ -29,8 +28,7 @@ public class FXEventHandlerDelegate {
             Converter converterRef1 = conversiontable.get(referencedPair[1]);
             if(converterRef0 == null && !converterRef0.getConverterFunction().isPresent()
                     && converterRef1 == null && !converterRef1.getConverterFunction().isPresent()) {
-                Function<Double, Double> composedFunction = converterRef0.getConverterFunction().get().andThen(converterRef1.getConverterFunction().get());
-                return Optional.of(new HashMap.SimpleEntry(entryPair, new ConverterImpl(entryPair, composedFunction)));
+                return Optional.of(new HashMap.SimpleEntry(entryPair, new ConverterImpl(entryPair, converterRef0.getPair(), converterRef1.getPair())));
             }
         }
         return Optional.empty();
