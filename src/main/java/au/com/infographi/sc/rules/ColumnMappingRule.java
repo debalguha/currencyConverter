@@ -26,10 +26,13 @@ public class ColumnMappingRule implements TransformationRule {
         this.valueExpression = valueExpression;
         this.internalFunc = inputMap -> {
             Map<String, Object> output = new HashMap<>(inputMap);
-            if(Objects.nonNull(testExpression)){
-                if(testExpression(testExpression, output)){
-                    Object value = evaluate(valueExpression, output);
-                    output.put(destinationColumn, value);
+            if (Objects.nonNull(testExpression)) {
+                if (testExpression(testExpression, output)) {
+                    if (Optional.ofNullable(valueExpression).isPresent()) {
+                        output.put(destinationColumn, evaluate(valueExpression, output));
+                    } else {
+                        output.put(destinationColumn, inputMap.get(this.sourceColumn));
+                    }
                 }
             }
             return output;
@@ -81,7 +84,7 @@ public class ColumnMappingRule implements TransformationRule {
     }
 
     private boolean testExpression(Expression testExpression, Map<String, Object> evaluationContext) {
-        if("TRUE".equalsIgnoreCase(testExpression.expression())){
+        if (!Optional.ofNullable(testExpression).isPresent() || "TRUE".equalsIgnoreCase(testExpression.expression())) {
             return true;
         }
         Object sourceValue = Optional.ofNullable(evaluationContext.get(sourceColumn)).orElse("");

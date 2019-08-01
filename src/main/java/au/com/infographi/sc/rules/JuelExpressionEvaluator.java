@@ -18,7 +18,7 @@ public class JuelExpressionEvaluator {
 
     private static SimpleContext buildContextFrom(Map<String, Object> ruleContext, ExpressionFactory factory, Function<String, String> columnSanitizer) {
         SimpleContext ctx = new SimpleContext();
-        ruleContext.entrySet().stream().forEach((stringObjectEntry -> ctx.setVariable(columnSanitizer.apply(stringObjectEntry.getKey()), createValueExpression(stringObjectEntry.getValue(), factory))));
+        ruleContext.entrySet().stream().forEach((stringObjectEntry -> ctx.setVariable(SimpleColumnMapping.replaceSpaceFunction().compose(columnSanitizer).apply(stringObjectEntry.getKey()), createValueExpression(stringObjectEntry.getValue(), factory))));
         return ctx;
     }
 

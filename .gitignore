@@ -1,4 +1,4 @@
-/.idea/
-/target/
-/*.iml
-/*.csv
+.idea
+target
+*.iml
+*.csv

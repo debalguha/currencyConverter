@@ -21,19 +21,12 @@ public class JuelExpressionEvaluatorSpec {{
             Map<String, Object> dataMap = DataMapBuilder.withHashMapInstance().withKeyAndValue("Employer.ABN", "").build();
             assertThat(JuelExpressionEvaluator.evaluate(new JuelExpression("${empty _[Employer.ABN]}"), dataMap, Boolean.class, SimpleColumnMapping.sanitizer())).isTrue();
         });
+        it("Can evaluate an expression's value in relation to the given context", () -> {
+            Map<String, Object> dataMap = DataMapBuilder.withHashMapInstance()
+                    .withKeyAndValue("Employer.ABN", "123").withKeyAndValue("var1", "4.32").withKeyAndValue("var2", "2.32")
+                    .withKeyAndValue("var3", "").build();
+            assertThat(JuelExpressionEvaluator.evaluate(new JuelExpression("${[var1] + [var2]}"), dataMap, Double.class, SimpleColumnMapping.sanitizer())).isBetween(6.64d, 6.641d);
+        });
     });
 
-    /*@Test
-    public void test_Expression() {
-        Map<String, Object> dataMap = DataMapBuilder.withHashMapInstance().withKeyAndValue("Employer.ABN", "").build();
-        assertEquals("", JuelExpressionEvaluator.evaluate(new JuelExpression(""), dataMap, String.class));
-        assertEquals(Boolean.TRUE, JuelExpressionEvaluator.evaluate(new JuelExpression("${empty _[Employer.ABN]}"), dataMap, Boolean.class));
-    }
-
-    @Test
-    public void test_ExpressionReturningValue() {
-        Map<String, Object> dataMap = DataMapBuilder.withHashMapInstance().withKeyAndValue("Member.GivenName", "Debal")
-                .withKeyAndValue("Member.FamilyName", "Guha").build();
-        assertEquals("Guha,Debal", JuelExpressionEvaluator.evaluate(new JuelExpression("${_[Member.FamilyName].concat(',').concat(_[Member.GivenName])}"), dataMap, String.class));
-    }*/
 }}
