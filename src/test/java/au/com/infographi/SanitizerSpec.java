@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(Spectrum.class)
 public class SanitizerSpec {{
 
-    /*describe("The sanitizer function ", () -> {
+    describe("The sanitizer function ", () -> {
         it("can sanitize ']' but won't sanitize 'DOT' ", () ->  assertThat(SimpleColumnMapping.sanitizer().apply("ABC.gef]")).isEqualTo("ABC.gef"));
         it("can sanitize '_[' but won't sanitize 'DOT' ", () ->  assertThat(SimpleColumnMapping.sanitizer().apply("_[ABC.gef")).isEqualTo("ABC.gef"));
         it("can replace 'DOT' ", () ->  assertThat(SimpleColumnMapping.replaceDotFunction().apply("[ABC.gef")).isEqualTo("[ABCgef"));
@@ -22,7 +22,7 @@ public class SanitizerSpec {{
         it("can sanitize expression with multiple variables", () ->
                 assertThat(SimpleColumnMapping.sanitizer().apply("${_[Member.FamilyName].concat(',').concat(_[Member.GivenName]).concat(_[Member.OtherGivenName]) * _[Member.BenefitCategoryText]}"))
                         .isEqualTo("${MemberFamilyName.concat(',').concat(MemberGivenName).concat(MemberOtherGivenName) * MemberBenefitCategoryText}"));
-    });*/
+    });
 
     describe("The New sanitizer function ", () -> {
         it("does not sanitize only ']' ", () ->  assertThat(SimpleColumnMapping.newSanitizer().apply("ABC.gef]")).isEqualTo("ABC.gef]"));

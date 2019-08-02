@@ -18,14 +18,14 @@ public class JuelExpressionEvaluatorSpec {{
 
     describe("The juel evaluator ", () -> {
         it("can test an expression if true or false ", () -> {
-            Map<String, Object> dataMap = DataMapBuilder.withHashMapInstance().withKeyAndValue("Employer.ABN", "").build();
-            assertThat(JuelExpressionEvaluator.evaluate(new JuelExpression("${empty _[Employer.ABN]}"), dataMap, Boolean.class, SimpleColumnMapping.sanitizer())).isTrue();
+            Map<String, Object> dataMap = DataMapBuilder.withHashMapInstance().withKeyAndValue("EmployerABN", "").build();
+            assertThat(JuelExpressionEvaluator.evaluate(new JuelExpression("${empty _[Employer.ABN]}"), dataMap, Boolean.class, SimpleColumnMapping.newSanitizer())).isTrue();
         });
         it("Can evaluate an expression's value in relation to the given context", () -> {
             Map<String, Object> dataMap = DataMapBuilder.withHashMapInstance()
-                    .withKeyAndValue("Employer.ABN", "123").withKeyAndValue("var1", "4.32").withKeyAndValue("var2", "2.32")
+                    .withKeyAndValue("EmployerABN", "123").withKeyAndValue("var1", "4.32").withKeyAndValue("var2", "2.32")
                     .withKeyAndValue("var3", "").build();
-            assertThat(JuelExpressionEvaluator.evaluate(new JuelExpression("${[var1] + [var2]}"), dataMap, Double.class, SimpleColumnMapping.sanitizer())).isBetween(6.64d, 6.641d);
+            assertThat(JuelExpressionEvaluator.evaluate(new JuelExpression("${_[var1] + _[var2]}"), dataMap, Double.class, SimpleColumnMapping.newSanitizer())).isBetween(6.64d, 6.641d);
         });
     });
 

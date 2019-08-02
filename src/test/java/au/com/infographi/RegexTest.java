@@ -5,8 +5,11 @@ import java.util.regex.Pattern;
 
 public class RegexTest {
     public static void main(String atgs[]) throws Exception {
-        String sourceStr = "${_[Member.FamilyName].concat(',').concat(_[Member.GivenName]).concat(_[Member.OtherGivenName]) * _[Member.BenefitCategoryText][0]}";
-        Pattern pattern = Pattern.compile("[^_]*(_\\[)([a-zA-Z\\.\\s+]*)(\\])[^_]*");
+        String sourceStr = "${fn:upper (_[var1]) == '62118664298' || fn:lower (_[var2]) == '62118664298'}";
+        //String sourceStr = "${fn:upper (_[EmployerABN]) == '62118664298' || fn:lower (_[EmployerABN]) == '62118664298'}";
+        //String sourceStr = "${(_[EmployerABN]) + (_[EmployerABN2])}";
+        //String sourceStr = "${_[Member.FamilyName].concat(',').concat(_[Member.GivenName]).concat(_[Member.OtherGivenName]) * _[Member.BenefitCategoryText][0]}";
+        Pattern pattern = Pattern.compile("[^_]*(_\\[)([a-zA-Z\\.\\s+0-9]*)(\\])[^_]*");
         //Pattern pattern = Pattern.compile("[^_]*_\\[([a-zA-Z\\.]*)\\][^_]*");
         Matcher matcher = pattern.matcher(sourceStr);
         System.out.println(sourceStr);

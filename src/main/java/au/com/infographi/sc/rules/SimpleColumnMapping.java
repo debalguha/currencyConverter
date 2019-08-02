@@ -8,18 +8,13 @@ import java.util.regex.Pattern;
 public class SimpleColumnMapping {
     static Pattern[]patternsToReplaceWithEmpty = new Pattern[]{Pattern.compile("_?\\["), Pattern.compile("\\]")};
     static String[] stringPatternsToReplaceWithEmpty = new String[]{"_?\\[", "\\]", "\\.", "\\s+"};
-    static Pattern squareParenthesisEncloser = Pattern.compile("[^_]*(_\\[)([a-zA-Z\\.\\s+]*)(\\])[^_]*");
+    static Pattern squareParenthesisEncloser = Pattern.compile("[^_]*(_\\[)([a-zA-Z\\.\\s+0-9]*)(\\])[^_]*");
 
+    @Deprecated
     public static Function<String, String> sanitizer() {
         // Sanitizer composition is not associative!!
         return Arrays.stream(patternsToReplaceWithEmpty).map(pattern -> replaceMatchingPatternWithEmptyString(pattern)).reduce((func1, func2) -> func1.andThen(func2)).get()
                 .compose(sanitizeVariableEnclosedInSquareBrackets());
-    }
-
-    public static Function<String, String> newSanitizer() {
-        // Sanitizer composition is not associative!!
-        //return sanitizeVariableEnclosedInSquareBrackets();
-        return sanitizeVariableEnclosedInSquareBrackets_new();
     }
 
     public static Function<String, String> replaceMatchingPatternWithEmptyString(Pattern pattern) {
@@ -40,7 +35,7 @@ public class SimpleColumnMapping {
         };
     }
 
-    public static Function<String, String> sanitizeVariableEnclosedInSquareBrackets_new() {
+    public static Function<String, String> newSanitizer() {
         return s -> {
             Matcher matcher = squareParenthesisEncloser.matcher(s);
             StringBuilder builder = new StringBuilder();

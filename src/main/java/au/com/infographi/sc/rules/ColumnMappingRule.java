@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
-import static au.com.infographi.sc.rules.SimpleColumnMapping.sanitizer;
+import static au.com.infographi.sc.rules.SimpleColumnMapping.newSanitizer;
 
 public class ColumnMappingRule implements TransformationRule {
     public final String fileType;
@@ -79,7 +79,7 @@ public class ColumnMappingRule implements TransformationRule {
 
     private Object evaluate(Expression valueExpression, Map<String, Object> output) {
         output.remove(destinationColumn);
-        return valueExpression.expressionType() == ExpressionType.EXPRESSION_JUEL ? JuelExpressionEvaluator.evaluate(valueExpression, output, Object.class, sanitizer())
+        return valueExpression.expressionType() == ExpressionType.EXPRESSION_JUEL ? JuelExpressionEvaluator.evaluate(valueExpression, output, Object.class, newSanitizer())
                 : RegexExpressionEvaluator.evaluate(valueExpression, Optional.ofNullable(output.get(sourceColumn)).orElse("").toString());
     }
 
@@ -89,7 +89,7 @@ public class ColumnMappingRule implements TransformationRule {
         }
         Object sourceValue = Optional.ofNullable(evaluationContext.get(sourceColumn)).orElse("");
         return testExpression.expressionType() == ExpressionType.EXPRESSION_REGEX ? RegexExpressionEvaluator.evaluate(testExpression, sourceValue.toString())
-                : JuelExpressionEvaluator.evaluate(testExpression, evaluationContext, Boolean.class, sanitizer());
+                : JuelExpressionEvaluator.evaluate(testExpression, evaluationContext, Boolean.class, newSanitizer());
     }
 
     @Override
