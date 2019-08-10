@@ -42,7 +42,7 @@ public class ConversionServiceByLookup implements ConversionService, FXEventList
 
     @Override
     public String doConversion(String fromCurrency, String toCurrency, String valueToConvert) {
-        if(!canTransformTODouble(valueToConvert)) {
+        if(!canTransformToDouble(valueToConvert)) {
             return String.format("Unable to parse data[%s] for conversion", valueToConvert);
         }
         try{

@@ -27,7 +27,7 @@ public class Utils {
         return visitedEntries.contains(firstPair) || visitedEntries.contains(secondPair);
     }
 
-    public static boolean canTransformTODouble(String conversionEntry) {
+    public static boolean canTransformToDouble(String conversionEntry) {
         return DOUBLE_PATTERN.matcher(conversionEntry).matches();
     }
 

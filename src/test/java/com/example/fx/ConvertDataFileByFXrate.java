@@ -35,7 +35,7 @@ public class ConvertDataFileByFXrate {
 
             return handleExceptionAndForward(fromCurrency, toCurrency, fromAmount, conversionService);
         }).filter(aMap -> !aMap.isEmpty()).map(convertedMap -> fromMapToString(convertedMap));
-        new FileDatSync(writeDataFile, new String []{"FromCurrency", "ToCurrency", "FromAmount", "ToAmount"}).accept(transformedData);
+        new FileDataSink(writeDataFile, new String []{"FromCurrency", "ToCurrency", "FromAmount", "ToAmount"}).accept(transformedData);
         //System.out.println(transformedData.collect(Collectors.toList()).toString());
     }
 

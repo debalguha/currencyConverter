@@ -41,7 +41,7 @@ public class LookupTableBuilderV2 {
         if(isEmptystring(currentEntry.getConversionEntry())){
             return new ConverterImpl(currentEntry);
         }
-        if(canTransformTODouble(currentEntry.getConversionEntry())){
+        if(canTransformToDouble(currentEntry.getConversionEntry())){
             return new ConverterImpl(currentPair, buildFunction(Double.parseDouble(currentEntry.getConversionEntry())));
         } else {
             if(currentPair._1().equals(currentPair._2())){

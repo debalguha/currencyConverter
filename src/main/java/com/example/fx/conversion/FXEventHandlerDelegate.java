@@ -20,7 +20,7 @@ public class FXEventHandlerDelegate {
 
     private Optional<Map.Entry<Pair<String, String>, Converter>> updateConversionTable(Map<Pair<String, String>, Converter> conversiontable, FXEntry fxEntry) {
         Pair<String, String> entryPair = Pair.fromFXEntry(fxEntry);
-        if(canTransformTODouble(fxEntry.getConversionEntry())){
+        if(canTransformToDouble(fxEntry.getConversionEntry())){
             return Optional.of(new HashMap.SimpleEntry(entryPair, new ConverterImpl(entryPair, buildFunction(Double.parseDouble(fxEntry.getConversionEntry())))));
         } else {
             final Pair<String, String>[] referencedPair = toRefPairs(fxEntry);

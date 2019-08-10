@@ -7,11 +7,11 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public class FileDatSync implements DataSync {
+public class FileDataSink implements DataSync {
     private final String[] headers;
     private final File fileToSyncTo;
 
-    public FileDatSync(File fileToSyncTo, String[] headers) {
+    public FileDataSink(File fileToSyncTo, String[] headers) {
         this.headers = headers;
         this.fileToSyncTo = fileToSyncTo;
     }
